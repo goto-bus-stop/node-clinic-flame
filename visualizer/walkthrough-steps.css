@@ -1,0 +1,9 @@
+.nc-walkthrough-content .scrollable{
+  max-height: 200px;
+  overflow: auto;
+}
+
+.nc-walkthrough-content .welcome-step {
+  display: flex;
+  align-items: center;
+}
