@@ -632,7 +632,6 @@ class Ui extends events.EventEmitter {
       title: 'Click to start the step-by-step UI features guide!'
     })
     this.footer.d3Element.select('#filters-bar .left-col').append(() => this.helpButton.button)
-
     this.flameWrapperSpinner = spinner.attachTo(document.querySelector('#flame-main'))
   }
 
