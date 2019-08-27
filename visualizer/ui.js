@@ -368,9 +368,6 @@ class Ui extends events.EventEmitter {
       app: 'profiled application',
       deps: singular ? 'Dependency' : 'Dependencies',
       core: 'Rust',
-      'core:core': 'Standard library',
-      'core:alloc': 'Standard library',
-      'core:std': 'Standard library',
 
       'is:inlinable': 'Inlinable',
       'is:init': 'Init',
