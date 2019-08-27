@@ -75,23 +75,23 @@ class OptionsMenu extends HtmlContent {
       }
     })
 
-    this.d3MergeCheckbox = this.addFgOptionCheckbox({
-      id: 'option-usemergedtree',
-      name: 'Merge',
-      description: 'Join optimized and unoptimized versions of frames',
-      onChange: (checked) => {
-        this.ui.setUseMergedTree(checked)
-      }
-    })
+    // this.d3MergeCheckbox = this.addFgOptionCheckbox({
+    //   id: 'option-usemergedtree',
+    //   name: 'Merge',
+    //   description: 'Join optimized and unoptimized versions of frames',
+    //   onChange: (checked) => {
+    //     this.ui.setUseMergedTree(checked)
+    //   }
+    // })
 
-    this.d3OptCheckbox = this.addFgOptionCheckbox({
-      id: 'option-showoptimizationstatus',
-      name: 'Show optimization status',
-      description: 'Highlight frames that are optimized functions',
-      onChange: (checked) => {
-        this.ui.setShowOptimizationStatus(checked)
-      }
-    })
+    // this.d3OptCheckbox = this.addFgOptionCheckbox({
+    //   id: 'option-showoptimizationstatus',
+    //   name: 'Show optimization status',
+    //   description: 'Highlight frames that are optimized functions',
+    //   onChange: (checked) => {
+    //     this.ui.setShowOptimizationStatus(checked)
+    //   }
+    // })
 
     // preferences
     this.d3Preferences = this.d3OptionsList.append('div')
@@ -293,8 +293,8 @@ class OptionsMenu extends HtmlContent {
       showOptimizationStatus
     } = this.ui.dataTree
 
-    this.d3MergeCheckbox.property('checked', useMerged)
-    this.d3OptCheckbox.property('checked', showOptimizationStatus)
+    // this.d3MergeCheckbox.property('checked', useMerged)
+    // this.d3OptCheckbox.property('checked', showOptimizationStatus)
 
     this.setCodeAreas(codeAreas)
   }
@@ -329,12 +329,12 @@ class OptionsMenu extends HtmlContent {
 
     // Update option checkbox values.
     const { useMerged, showOptimizationStatus, exclude, appName } = this.ui.dataTree
-    this.d3MergeCheckbox.property('checked', useMerged)
-    this.d3OptCheckbox
-      .attr('disabled', useMerged ? 'disabled' : null)
-      .property('checked', showOptimizationStatus)
-      .select(function () { return this.closest('li') })
-      .classed('disabled', useMerged)
+    // this.d3MergeCheckbox.property('checked', useMerged)
+    // this.d3OptCheckbox
+    //   .attr('disabled', useMerged ? 'disabled' : null)
+    //   .property('checked', showOptimizationStatus)
+    //   .select(function () { return this.closest('li') })
+    //   .classed('disabled', useMerged)
     this.d3InitCheckbox.property('checked', !exclude.has('is:init'))
 
     // Updating the app name
