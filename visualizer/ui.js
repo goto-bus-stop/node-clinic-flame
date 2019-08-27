@@ -367,7 +367,10 @@ class Ui extends events.EventEmitter {
     const keysToLabels = {
       app: 'profiled application',
       deps: singular ? 'Dependency' : 'Dependencies',
-      core: 'Node JS',
+      core: 'Rust',
+      'core:core': 'Standard library',
+      'core:alloc': 'Standard library',
+      'core:std': 'Standard library',
 
       'is:inlinable': 'Inlinable',
       'is:init': 'Init',
@@ -394,7 +397,7 @@ class Ui extends events.EventEmitter {
 
   getDescriptionFromKey (key) {
     const keysToDescriptions = {
-      core: `JS functions in core Node.js APIs.`,
+      core: `Rust standard library calls`,
       'all-v8': `The JavaScript engine used by default in Node.js. ${this.createMoreInfoLink('https://clinicjs.org/documentation/flame/09-advanced-controls/#controls-v8')}`,
       'all-v8:v8': `Operations in V8's implementation of JS. ${this.createMoreInfoLink('https://clinicjs.org/documentation/flame/09-advanced-controls/#controls-v8-runtime')}`,
       'all-v8:native': `JS compiled into V8, such as prototype methods and eval. ${this.createMoreInfoLink('https://clinicjs.org/documentation/flame/09-advanced-controls/#controls-v8-native')}`,
@@ -404,12 +407,6 @@ class Ui extends events.EventEmitter {
 
     if (keysToDescriptions[key]) {
       return keysToDescriptions[key]
-    }
-
-    if (key.startsWith('deps:')) {
-      // TODO use actual path, this is incorrect for
-      // nested dependencies
-      return `./node_modules/${key.slice(5)}`
     }
 
     return null

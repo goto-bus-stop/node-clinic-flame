@@ -8,7 +8,7 @@ class Key extends HtmlContent {
 
     this.app = 'Profiled app'
     this.deps = 'Dependencies'
-    this.core = 'Node Core'
+    this.core = 'Rust'
   }
 
   initializeElements () {
